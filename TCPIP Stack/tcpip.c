@@ -16,16 +16,16 @@ int main(int argc, char *argv[]) {
 	char *servIP = argv[1];		// First arg: server IP address (dotted quad)
 	char *echoString = argv[2];	// Second arg: string to echo
 	
-	in_port_t servPort = (argc == 4)? atoi(argv[3]: 7;		// Third arg (optional): server port (numeric). 7 is a well-known echo port 
+	in_port_t servPort = (argc == 4)? atoi(argv[3]: 7;	// Third arg (optional): server port (numeric). 7 is a well-known echo port 
 	int sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);	// Create a reliable, stream socket using TCP.
 	if (sock < 0)
 		DieWithUserMessage("socket() failed");
 
 
 	// construct the server address structure
-	struct sockaddr_in servAddr;			// server adderss
+	struct sockaddr_in servAddr;		// server adderss
 	memset(&servAddr, 0, sizeof(servAddr));	// zero out structure
-	servAddr.sin_family = AF_INET;			// IPv4 address family
+	servAddr.sin_family = AF_INET;		// IPv4 address family
 	
 
 	// convert address
